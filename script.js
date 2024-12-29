@@ -158,7 +158,12 @@ const products = [
     ],
   },
 ];
+
+
 let choosenProduct = products[0];
+
+
+
 menuitems.forEach((item,index)=>{
     item.addEventListener("click",()=>{
         wrapper.style.transform = `translateX(${-100 * index}vw)`;
@@ -176,11 +181,15 @@ menuitems.forEach((item,index)=>{
         })
     });
 });
+
+
 currentProductColor.forEach((color, index)=>{
   color.addEventListener("click",()=>{
     currentProductImg.src = choosenProduct.colors[index].img;
   })
 })
+
+
 currentProductsize.forEach((size,index)=>{
   size.addEventListener("click",()=>{
     currentProductsize.forEach((size)=>{
@@ -191,4 +200,20 @@ currentProductsize.forEach((size,index)=>{
     size.style.color = "white"
   })
 })
+
+
+const productButton = document.querySelector(".productButton");
+const payment = document.querySelector(".payments");
+const close = document.querySelector(".close");
+
+productButton.addEventListener("click", () => {
+  payment.style.display = "flex";
+  cart1.style.display = "none";
+  cart2.style.display = "none";
+  cart3.style.display = "none";
+});
+
+close.addEventListener("click", () => {
+  payment.style.display = "none";
+});
 
